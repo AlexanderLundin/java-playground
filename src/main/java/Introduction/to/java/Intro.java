@@ -2,7 +2,7 @@ package Introduction.to.java;
 
 public class Intro {
 
-    boolean isActive(String status) {
+    boolean IsActive(String status) {
         // Implement your solution
         if (status.equals("active")){
             return true;
@@ -10,7 +10,7 @@ public class Intro {
         return false;
     }
 
-    String grade(int input) {
+    String Grade(int input) {
         String grade = "";
         if (input <= 59){
             grade = "F";
@@ -26,4 +26,19 @@ public class Intro {
         return grade;
     }
 
+    public boolean WhileLoopPrinter() {
+        int i = 45;
+        while (i < 51) {
+            System.out.println(i);
+            i++;
+        }
+        return true;
+    }
+
+    public boolean ForLoopPrinter() {
+        for (int i = 2; i < 7; i = i + 2) {
+            System.out.println(i);
+        }
+        return true;
+    }
 }

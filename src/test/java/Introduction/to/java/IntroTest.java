@@ -1,6 +1,5 @@
 package Introduction.to.java;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +17,7 @@ public final class IntroTest {
     public void TestIsActive() {
         //Setup
         //Exercise
-        boolean isActive = intro.isActive("active");
+        boolean isActive = intro.IsActive("active");
         //Assert
         assertTrue(isActive);
         //Teardown
@@ -28,9 +27,29 @@ public final class IntroTest {
     public void TestGrade (){
         //Setup
         //Exercise
-        String grade = intro.grade(50);
+        String grade = intro.Grade(50);
         //Assert
         assertEquals(grade ,"F");
         //Teardown
      }
+
+    @Test
+    public void TestWhileLoopPrinter() {
+        //Setup
+        //Exercise
+        boolean loopExecuted = intro.WhileLoopPrinter();
+        //Assert
+        assertTrue(loopExecuted);
+        //Teardown
+    }
+
+    @Test
+    public void TestForLoopPrinter() {
+        //Setup
+        //Exercise
+        boolean loopExecuted = intro.ForLoopPrinter();
+        //Assert
+        assertTrue(loopExecuted);
+        //Teardown
+    }
 }
