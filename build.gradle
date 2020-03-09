@@ -40,6 +40,15 @@ jacocoTestReport{
 	executionData junitPlatformTest
 }
 
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.7
+            }
+        }
+    }
+}
 
 
 jar {
