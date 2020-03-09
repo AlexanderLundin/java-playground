@@ -44,12 +44,14 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = 0.7
+                minimum = 0.0
             }
         }
     }
 }
 
+test.finalizedBy jacocoTestReport
+jacocoTestReport.finalizedBy jacocoTestCoverageVerification
 
 jar {
     manifest {
