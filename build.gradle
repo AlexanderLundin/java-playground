@@ -1,9 +1,19 @@
-plugins {
-    id 'java'
-}
-
 group 'com.galvanize'
 version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.2'
+    }
+}
+
+apply plugin: "jacoco"
+apply plugin: "java"
+apply plugin: "org.junit.platform.gradle.plugin"
+
 
 sourceCompatibility = 1.8
 
@@ -15,6 +25,23 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
+
+test{
+	jacoco{
+		destinationFile file("$buildDir/jacoco/junitPlatformTest.exec")
+		}
+}
+
+jacoco {
+    applyTo junitPlatformTest
+}
+
+jacocoTestReport{
+	executionData junitPlatformTest
+}
+
+
+
 jar {
     manifest {
         attributes(
@@ -22,4 +49,13 @@ jar {
                 'Main-Class': 'com.galvanize.Application'
         )
     }
+}
+
+// lines to skip error during build
+task dummyJavaExec(type: JavaExec) {
+    enabled = false
+}
+
+build {
+    dependsOn.add(dummyJavaExec)
 }
