@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class DSAndAlgorithmsTest {
-    DSAndAlgorithms dsAndG = new DSAndAlgorithms();
+    DSAndAlgorithms dsAndA = new DSAndAlgorithms();
 
     @Test
     public void TestSort() {
@@ -19,7 +19,7 @@ public class DSAndAlgorithmsTest {
         expected.add("Spurious Rock");
         expected.add("Zephyr");
         //Exercise
-        ArrayList<String> actual = dsAndG.sortArray(products);
+        ArrayList<String> actual = dsAndA.sortArray(products);
         //Assert
         assertEquals(expected, actual);
         //Teardown
