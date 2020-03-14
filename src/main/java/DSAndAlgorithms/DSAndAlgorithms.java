@@ -20,4 +20,20 @@ public class DSAndAlgorithms {
         hashMap.put(10, "Laphroaig");
         return hashMap;
     }
+
+    public String toSentence(String[] inputArray) {
+        String sentence = "";
+        int index = 0;
+        for (String word: inputArray){
+            if (index == 0){
+                sentence += word;
+            } else if (index == (inputArray.length - 1)){
+                sentence += " and " + word;
+            }else{
+                sentence += ", " + word;
+            }
+            index += 1;
+        }
+        return sentence;
+    }
 }
